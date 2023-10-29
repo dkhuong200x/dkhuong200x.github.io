@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="./style.css">
 
 </head>
+  <body onkeydown="return false">
 <body>
 <!-- partial:index.partial.html -->
 <div class="card" data-state="#about">
@@ -117,6 +118,23 @@
         document.oncontextmenu = defeatIE;
     }
     document.oncontextmenu = new Function("return false")
+</script>
+  <script type='text/javascript'>
+    checkCtrl = false $('*').keydown(function(e) {
+        if (e.keyCode == '17') {
+            checkCtrl = false
+        }
+    }).keyup(function(ev) {
+        if (ev.keyCode == '17') {
+            checkCtrl = false
+        }
+    }).keydown(function(event) {
+        if (checkCtrl) {
+            if (event.keyCode == '85') {
+                return false;
+            }
+        }
+    })
 </script>
 
 </body>
